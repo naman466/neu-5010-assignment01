@@ -5,8 +5,10 @@ package edu.northeastern.shelter;
  * age, a missing intake date.
  *
  * <p>This ships complete. It extends {@link IllegalArgumentException}, so callers are not forced to
- * wrap every {@code new Animal(...)} in a try/catch. That is deliberate: a blank name is a bug in the
- * calling code, not a condition a correct caller should be expected to recover from, and demanding a
+ * wrap every {@code new Animal(...)} in a try/catch. That is deliberate: a blank name is a bug
+ * in the
+ * calling code, not a condition a correct caller should be expected to recover from, and
+ * demanding a
  * try/catch around every construction would drown the code that matters.
  *
  * <p>That reasoning — is this a bug in the caller, or something the caller can sensibly recover

@@ -31,7 +31,9 @@ class AnimalTest {
     Animal luna = luna();
     assertEquals("Luna", luna.name());
     assertEquals(Species.CAT, luna.species());
-    assertEquals(23, luna.age().months());
+    assertEquals(23, luna
+        .age()
+        .months());
     assertEquals(INTAKE, luna.intakeDate());
   }
 
@@ -112,7 +114,10 @@ class AnimalTest {
         assertThrows(
             IntakeException.class, () -> new Animal("  ", Species.DOG, AgeMonths.of(1), INTAKE));
     assertTrue(
-        blankName.getMessage().toLowerCase().contains("name"),
+        blankName
+            .getMessage()
+            .toLowerCase()
+            .contains("name"),
         "the message should name the offending argument");
   }
 }

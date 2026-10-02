@@ -13,7 +13,9 @@ package edu.northeastern.shelter;
  */
 public final class AgeMonths {
 
-  /** The oldest age this shelter will record: 40 years. */
+  /**
+   * The oldest age this shelter will record: 40 years.
+   */
   public static final int MAX_MONTHS = 480;
 
   private final int months;
@@ -68,7 +70,7 @@ public final class AgeMonths {
    * @return the number of complete years, never negative
    */
   public int years() {
-    throw new UnsupportedOperationException("TODO: implement years()");
+    return months / 12;
   }
 
   /**
@@ -79,7 +81,7 @@ public final class AgeMonths {
    * @return a value in the range 0 to 11 inclusive
    */
   public int remainderMonths() {
-    throw new UnsupportedOperationException("TODO: implement remainderMonths()");
+    return months % 12;
   }
 
   /**
@@ -88,7 +90,7 @@ public final class AgeMonths {
    * @return {@code true} if this age is less than twelve months
    */
   public boolean isUnderOneYear() {
-    throw new UnsupportedOperationException("TODO: implement isUnderOneYear()");
+    return months < 12;
   }
 
   /**
@@ -114,6 +116,34 @@ public final class AgeMonths {
    */
   @Override
   public String toString() {
-    throw new UnsupportedOperationException("TODO: implement toString()");
+    int years = years();
+    int remainingMonths = remainderMonths();
+
+    if (years == 0) {
+      if (remainingMonths == 1) {
+        return "1 month";
+      }
+      return remainingMonths + " months";
+    }
+
+    String yearPart;
+    if (years == 1) {
+      yearPart = "1 year";
+    } else {
+      yearPart = years + " years";
+    }
+
+    if (remainingMonths == 0) {
+      return yearPart;
+    }
+
+    String monthPart;
+    if (remainingMonths == 1) {
+      monthPart = "1 month";
+    } else {
+      monthPart = remainingMonths + " months";
+    }
+
+    return yearPart + ", " + monthPart;
   }
 }

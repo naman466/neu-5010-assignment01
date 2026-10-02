@@ -9,11 +9,17 @@ package edu.northeastern.shelter;
  * written.
  */
 public enum Species {
-  /** A dog. */
+  /**
+   * A dog.
+   */
   DOG("Dog"),
-  /** A cat. */
+  /**
+   * A cat.
+   */
   CAT("Cat"),
-  /** A bird. */
+  /**
+   * A bird.
+   */
   BIRD("Bird");
 
   private final String label;
